@@ -28,7 +28,7 @@ public class WebElementsCommandsDemo1 {
 		//Storing the error message element
 		WebElement errorMessage=driver.findElement(By.xpath("//span[@id='spanMessage']"));
 		//will return either true or false
-		System.out.println(errorMessage.isDisplayed());
+		System.out.println("Error Message Displayed:= "+errorMessage.isDisplayed());
 		
 		//String errorMsg=errorMessage.getText();
 		//System.out.println(errorMsg);
@@ -44,6 +44,7 @@ public class WebElementsCommandsDemo1 {
 		}
 		
 		
+				
 		
 		
 		
