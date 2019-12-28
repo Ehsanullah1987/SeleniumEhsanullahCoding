@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import com.utils.CommonMethods;
 
 
-public class CheckBoxDemo extends CommonMethods{
+public class isEnabledDemo extends CommonMethods{
 	
 	public static final String HRMS_URL="http://166.62.36.207/humanresources/symfony/web/index.php/auth/login";
 
