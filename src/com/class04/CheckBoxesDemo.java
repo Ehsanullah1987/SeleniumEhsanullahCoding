@@ -26,30 +26,29 @@ public class CheckBoxesDemo extends CommonMethods{
 		driver.findElement(By.linkText("Checkbox Demo")).click();
 		
 		WebElement ageCheckBox=driver.findElement(By.id("isAgeSelected"));
-		
+		//Checking if the checkbox is selected
 		if(!ageCheckBox.isSelected()) {
-			ageCheckBox.click();
+			ageCheckBox.click();//clicks only if not selected
 		}
 		Thread.sleep(1000);
 		ageCheckBox.click();
 		
 		System.out.println("**********Group of Check Boxes********");
 		
+		//Storing the group of check boxes
 		List<WebElement> groupCheckBox=driver.findElements(By.xpath("//input[@class='cb1-element']"));
 		
-		if(!groupCheckBox.isEmpty()) {
-			
-			Iterator<WebElement> it=groupCheckBox.iterator();
-			while(it.hasNext()) {
-				it.next().click();
+		if(!groupCheckBox.isEmpty()) {//checking if groupCheckBox is empty or not
+			Iterator<WebElement> it=groupCheckBox.iterator();//adding the list to iterator
+			while(it.hasNext()) {//if there is next element in the list, then go to it.
+				it.next().click();//click on the next element
 				Thread.sleep(1000);
 			}
-			
 		}else {
 			System.err.println("List is empty, check your xpath");
 		}
 		
-		
+		//Break till 1:40
 	}
 
 }
