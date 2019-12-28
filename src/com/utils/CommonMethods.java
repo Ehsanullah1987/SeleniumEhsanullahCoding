@@ -9,6 +9,12 @@ public class CommonMethods {
 	
 	public static WebDriver driver;
 	
+	
+	/**
+	 * Use this method in need of opening browser and target url
+	 * @param browser The desired browser
+	 * @param url	 The desired url
+	 */
 	public static void setUp(String browser, String url){
 		
 		if(browser.equalsIgnoreCase("chrome")) {

@@ -20,8 +20,9 @@ public class CheckBoxDemo extends CommonMethods{
 		
 		WebElement loginBtn=driver.findElement(By.cssSelector("input#btnLogin"));
 		
+		//isEnabled() is used to see if the target element is enabled or disabled.
 		System.out.println(loginBtn.isEnabled());
-		
+		//Break till 10:42
 		
 	}
 
