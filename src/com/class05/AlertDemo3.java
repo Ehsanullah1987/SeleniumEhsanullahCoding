@@ -27,10 +27,13 @@ public class AlertDemo3 extends CommonMethods{
 		
 		//handle the alert.
 		Alert alert=driver.switchTo().alert();
+		
+		//Send some text to alert box
 		alert.sendKeys("Weqas");
 		
 		alert.accept();
-		
-		//driver.close();
+		boolean isDisplayed=driver.findElement(By.id("prompt-demo")).isDisplayed();
+		System.out.println(isDisplayed);
+		driver.close();
 	}
 }
