@@ -32,15 +32,12 @@ public class DropDownDemo2 extends CommonMethods{
 		System.out.println("Size of the DD is= "+options.size());
 		
 		for(WebElement element:options) {
-			String ddValue=element.getText();
-			System.out.println(ddValue);
+			String ddValue=element.getText();//get all values of DD
+			System.out.println(ddValue);//print each value
 			if(ddValue.equals("Friday")) {
 				element.click();
 				Thread.sleep(1000);
 			}
-			element.click();
-			Thread.sleep(1000);
-
 		}
 		
 		Thread.sleep(3000);
