@@ -57,6 +57,7 @@ public class MultiWindowsDemo extends CommonMethods{
 		
 		//close current window and all other associated windows with it
 		driver.quit();
+	
 	}
 
 }
