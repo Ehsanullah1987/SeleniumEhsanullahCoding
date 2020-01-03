@@ -12,7 +12,7 @@ public class DropDownRecap extends CommonMethods{
 	public static void main(String[] args) throws InterruptedException {
 
 		setUp("chrome", "https://www.ebay.com/");
-		WebElement dd=driver.findElement(By.cssSelector("select#gh-cat"));
+		WebElement dd=driver.findElement(By.cssSelector("input#gh-btn"));
 		Select obj=new Select(dd);
 		List<WebElement> options=obj.getOptions();
 		//validate each option is clickable
