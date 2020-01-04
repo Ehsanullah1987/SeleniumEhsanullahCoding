@@ -1,5 +1,7 @@
 package com.utils;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
@@ -8,7 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-//command+o--> to see all methods within the class
+//command+o--> for mac to see all methods within the class
+//ctrl+o--> for windows
 public class CommonMethods {
 
 	public static WebDriver driver;
@@ -24,16 +27,17 @@ public class CommonMethods {
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "drivers/chromeDriver");
 			driver = new ChromeDriver();
-			driver.get(url);
-
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
 			driver = new FirefoxDriver();
-			driver.get(url);
+			
 		} else {
 			System.err.println("Browser not supported");
 		}
-
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get(url);
 	}
 
 	/**
