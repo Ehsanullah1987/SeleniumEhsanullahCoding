@@ -1,4 +1,4 @@
-package com.class6;
+package com.class06;
 
 import org.openqa.selenium.By;
 

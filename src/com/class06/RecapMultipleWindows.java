@@ -1,4 +1,4 @@
-package com.class6;
+package com.class06;
 
 import java.util.Iterator;
 import java.util.Set;
