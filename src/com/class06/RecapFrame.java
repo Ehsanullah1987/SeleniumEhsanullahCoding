@@ -8,7 +8,7 @@ public class RecapFrame extends CommonMethods {
 
 	public static void main(String[] args) throws InterruptedException {
 		setUp("chrome", "http://jiravm.centralus.cloudapp.azure.com:8081/bootstrap-iframe.html");
-		driver.switchTo().frame("FrameOne");
+		driver.switchTo().frame("Fram");
 		Thread.sleep(2000);
 		boolean isDisplayed=driver.findElement(By.xpath("//h3[text()='Syntax Technologies']")).isDisplayed();
 		Thread.sleep(3000);

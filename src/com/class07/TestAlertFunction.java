@@ -1,6 +1,5 @@
 package com.class07;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 
 import com.utils.CommonMethods;
