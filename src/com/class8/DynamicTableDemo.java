@@ -33,5 +33,6 @@ public class DynamicTableDemo extends CommonMethods {
 
 		Thread.sleep(4000);
 		driver.quit();
+		//break till 2:01
 	}
 }
