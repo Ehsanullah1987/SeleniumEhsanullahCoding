@@ -26,7 +26,7 @@ public class ExplicitWaitDemo extends CommonMethods{
 		//it will wait until expected condition is met or the specified time
 		
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//p[starts-with(text(), 'First Name')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[starts-with(text(), 'First Name')]")));
 		
 		boolean displayed=driver.findElement(By.xpath("//p[starts-with(text(), 'First Name')]")).isDisplayed();
 		if(displayed) {

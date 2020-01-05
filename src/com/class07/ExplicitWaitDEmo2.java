@@ -22,15 +22,16 @@ public class ExplicitWaitDEmo2 extends CommonMethods{
 		driver.findElement(By.name("q")).sendKeys("Wegmans", Keys.ENTER);
 		//click on first link on results page
 		driver.findElement(By.xpath("//h3[@class='LC20lb']")).click();
-		//click on sign in 
 		
+		//bring webdriver wait to wait until element becomes clickable 	
 		WebDriverWait wait=new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("sign-in")));
-		
+		//click on sign in
 		driver.findElement(By.id("sign-in")).click();
 		System.out.println("button was clicked-----------------");
 		
 		Thread.sleep(3000);
 		driver.quit();
+		//break till 2 pm
 	}
 }
