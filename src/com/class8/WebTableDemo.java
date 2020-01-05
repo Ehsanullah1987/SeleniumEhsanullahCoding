@@ -1,5 +1,6 @@
 package com.class8;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -19,10 +20,24 @@ public class WebTableDemo extends CommonMethods {
 		//Find how many rows of data table has
 		List<WebElement> rows=driver.findElements(By.xpath("//table[@id='task-table']/tbody/tr"));
 		System.out.println("Number of rows in the table is ="+rows.size());
+		
+		System.out.println("Printing row data -------------------------------");
+		Iterator<WebElement> rowsIt=rows.iterator();
+		while(rowsIt.hasNext()) {
+			String rowData=rowsIt.next().getText();
+			System.out.println(rowData);
+		}
 	
 		//Number of Columns
 		List<WebElement> cols=driver.findElements(By.xpath("//table[@id='task-table']/thead/tr/th"));
 		System.out.println("Number of cols in the table is ="+cols.size());
-		//break till 11:50
+		
+		System.out.println("Printing columns headers -------------------------------");
+		for(WebElement col: cols) {
+			String header=col.getText();
+			System.out.println(header);
+		}
+		
+		driver.quit();
 	}
 }
