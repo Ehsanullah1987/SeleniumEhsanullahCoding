@@ -1,4 +1,4 @@
-package com.class8;
+package com.class08;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
