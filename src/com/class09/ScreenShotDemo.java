@@ -25,26 +25,38 @@ public class ScreenShotDemo extends CommonMethods {
 		driver.findElement(By.id("btnLogin")).click();
 		// validation that admin is logged in
 		String welcomeText = driver.findElement(By.id("welcome")).getText();
-		
-		if (welcomeText.contains(userName)) {
+
+		if (welcomeText.contains("John")) {
 			System.out.println("Test Pass");
+			// How to take screenshot using selenium?
+			// We can use TakesScreenshot interface
+			// step1: downcast webdriver to the type of TakesScreenshot
+			TakesScreenshot ts = (TakesScreenshot) driver;
+			// call method getScreenshotAs and specify output type
+			File screen = ts.getScreenshotAs(OutputType.FILE);
+			try {
+				// copy file to the specified destination and give name and extension
+				FileUtils.copyFile(screen, new File("screenshots/HRMS/AdminLogin.jpg"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
 		} else {
 			System.out.println("Test Fail");
+			
+			TakesScreenshot ts = (TakesScreenshot) driver;
+			// call method getScreenshotAs and specify output type
+			File screen = ts.getScreenshotAs(OutputType.FILE);
+			try {
+				// copy file to the specified destination and give name and extension
+				FileUtils.copyFile(screen, new File("screenshots/HRMS/WrongLogin.jpg"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		//How to take screenshot using selenium?
-		//We can use TakesScreenshot interface
-		//step1: downcast webdriver to the type of TakesScreenshot
-		TakesScreenshot ts=(TakesScreenshot)driver;
-		//call method getScreenshotAs and specify output type
-		File screen=ts.getScreenshotAs(OutputType.FILE);
-		try {
-			//copy file to the specified destination and give name and extension
-			FileUtils.copyFile(screen, new File("screenshots/HRMS/AdminLogin.jpg"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
+
 		driver.quit();
-		//from homework take screenshot as a proof that "No record message is displayed"
+		// from homework take screenshot as a proof that "No record message is
+		// displayed"
 	}
 }
