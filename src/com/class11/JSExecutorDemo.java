@@ -18,7 +18,7 @@ public class JSExecutorDemo extends CommonMethods {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		WebElement loginBtn = driver.findElement(By.id("btnLogin"));
-		js.executeScript("arguments[0].style.backgroundColor='Red'", loginBtn);
+		js.executeScript("arguments[0].style.backgroundColor='green'", loginBtn);
 		Thread.sleep(5000);
 		js.executeScript("arguments[0].click();", loginBtn);
 		Thread.sleep(5000);
